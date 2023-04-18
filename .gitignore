@@ -1,0 +1,4 @@
+*.swp
+generation/*.tbl
+tpch-evaluation/*.csv
+
