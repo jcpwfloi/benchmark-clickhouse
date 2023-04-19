@@ -1,4 +1,6 @@
 *.swp
 tables/*.tbl
 tpch-evaluation/*.csv
+__pycache__/
+tpch-clickhouse/
 

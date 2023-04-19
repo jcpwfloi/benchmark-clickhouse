@@ -29,7 +29,7 @@ def query(id, sql):
 
 def worker_init():
     global connection
-    connection = clickhouse_driver.Client(host="localhost", port=9000, database='tpc')
+    connection = clickhouse_driver.Client(host="localhost", port=9000, database='tpcm')
 
 def get_query(num):
     sql_file = "../tpch-clickhouse/ch%02d.sql" % num
