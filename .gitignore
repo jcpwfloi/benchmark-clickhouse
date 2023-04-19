@@ -1,4 +1,4 @@
 *.swp
-generation/*.tbl
+tables/*.tbl
 tpch-evaluation/*.csv
 
