@@ -21,7 +21,7 @@ for i in range(1, 23):
 
 lmb = float(sys.argv[1])
 print(f"#lambda={lmb}")
-print("#,query,T,clickhouse+tcp,clickhouse")
+print("n,query,A,T,clickhouse+tcp,clickhouse,tcp*1e6")
 
 query_start = []
 
@@ -47,7 +47,7 @@ def get_interarrival_time():
 def print_stats(result):
     id, query_id, client_elapsed, elapsed = result
     local_elapsed = time.time() - query_start[id]
-    print(f"{id},{query_id},{local_elapsed},{client_elapsed},{elapsed}", flush=True)
+    print(f"{id},{query_id},{query_start[id]},{local_elapsed},{client_elapsed},{elapsed},{'%.2f' % ((client_elapsed-elapsed) * 1e6)}", flush=True)
 
 def print_error(e):
     print(e, flush=True, file=sys.stderr)
