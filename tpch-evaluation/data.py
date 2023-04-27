@@ -10,5 +10,5 @@ for name in names:
     A = df.copy()
     A = A.sort_values(by="n")
     lmb = 1.0 / A["A"].diff().mean()
-    df = df[3000:]
+    df = df[2000:]
     print(name.replace(".csv", ""), lmb, df['T'].mean(), sep=',')

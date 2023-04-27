@@ -6,7 +6,7 @@ import os
 import time
 import numpy as np
 
-N = 20000
+N = 50000
 N_POOL = 100
 
 def get_query(num):
@@ -55,7 +55,8 @@ def print_error(e):
 if __name__ == '__main__':
     with Pool(N_POOL, initializer=worker_init) as pool:
         for i in range(N):
-            query_id = random.randint(1, 22)
+            # query_id = random.randint(1, 22)
+            query_id = random.choices([1,3,4,5,6,7,8])[0]
             query_start.append(time.time())
             result = pool.apply_async(query, (i, query_id, queries[query_id]), callback=print_stats, error_callback=print_error)
             time.sleep(get_interarrival_time())
